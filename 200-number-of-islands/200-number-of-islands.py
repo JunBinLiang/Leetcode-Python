@@ -19,8 +19,7 @@ class Solution:
                     sz = len(q)
                     for x in range(sz):
                         pos = q.popleft()
-                        r = pos[0]
-                        c = pos[1]
+                        r, c = pos[0], pos[1]
                         for p in di:
                             nxtr = r + p[0]
                             nxtc = c + p[1]
