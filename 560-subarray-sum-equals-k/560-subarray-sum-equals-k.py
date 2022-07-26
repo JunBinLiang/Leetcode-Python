@@ -1,8 +1,7 @@
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
         
-        f = {}
-        f[0] = 1
+        f = {0 : 1}
         s = 0
         res = 0
         for i in range(len(nums)):
