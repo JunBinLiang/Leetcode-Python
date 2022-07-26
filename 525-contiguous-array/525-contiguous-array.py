@@ -1,17 +1,19 @@
 class Solution:
     def findMaxLength(self, a: List[int]) -> int:
+        for i in range(len(a)):
+            if a[i] == 0:
+                a[i] = -1
+        
         f = {0 : -1}
         t = 0
         res = 0
         for i in range(len(a)):
-            if a[i] == 0:
-                t += -1
-            else:
-                t += 1
+            t += a[i]   
             
             if t in f.keys():
                 res = max(res, i - f[t])
-            else:
+            
+            if t not in f.keys():
                 f[t] = i
         
         return res
