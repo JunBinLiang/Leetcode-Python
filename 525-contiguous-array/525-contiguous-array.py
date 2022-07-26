@@ -5,8 +5,7 @@ class Solution:
                 a[i] = -1
         
         f = {0 : -1}
-        t = 0
-        res = 0
+        t, res = 0, 0
         for i in range(len(a)):
             t += a[i]   
             
