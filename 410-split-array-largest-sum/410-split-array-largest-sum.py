@@ -6,7 +6,6 @@ class Solution:
         res = -1
         while l <= r:
             mid = l + (r - l) // 2
-            print(l, r, mid)
             #can we divide m array such that sum <= mid
             if self.check(a, mid, m):
                 res = mid
