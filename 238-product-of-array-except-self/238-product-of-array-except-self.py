@@ -18,6 +18,5 @@ class Solution:
             elif i == n - 1:
                 a[i] = l[i - 1]
             else:
-                a[i] = l[i - 1] * r[i + 1]
-                
+                a[i] = l[i - 1] * r[i + 1]        
         return a
