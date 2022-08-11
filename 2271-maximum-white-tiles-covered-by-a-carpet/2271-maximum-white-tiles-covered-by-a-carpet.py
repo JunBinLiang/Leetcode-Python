@@ -10,8 +10,6 @@ class Solution:
             pre[i] = pre[i - 1] + le
             
             
-            
-            
         def getPre(l, r):
             if l == 0:
                 return pre[r]
@@ -36,12 +34,10 @@ class Solution:
             if i <= pos - 1:
                 tot += getPre(i, pos - 1)
                 
-            
             if to > a[pos][1]:
                 tot += (a[pos][1] - a[pos][0] + 1)
             else:
                 tot += (to - a[pos][0] + 1)
-            
             res = max(res, tot)
             
         return res
