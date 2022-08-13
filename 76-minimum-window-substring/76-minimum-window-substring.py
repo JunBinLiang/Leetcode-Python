@@ -2,6 +2,7 @@ class Solution:
     def minWindow(self, s: str, t: str) -> str:
         res = 1000000000
         j = 0
+        l, r = -1, -1
         f = {}
         g = {}
         for i in range(len(t)):
@@ -9,7 +10,7 @@ class Solution:
                 g[t[i]] = 0
             g[t[i]] += 1
         
-        l, r = -1, -1
+       
         
         def check():
             for k in g:
