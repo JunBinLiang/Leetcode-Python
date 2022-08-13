@@ -7,15 +7,15 @@ class Solution:
             return False
         
         res, cnt = 0, 0
-        j = 0
+        l = 0
         for i in range(len(s)):
             if good(s[i]):
                 cnt += 1
-            while i - j + 1 >= k:
+            while i - l + 1 >= k:
                 res = max(res, cnt)
-                if good(s[j]):
+                if good(s[l]):
                     cnt -= 1
-                j += 1
+                l += 1
                 
         return res
     
