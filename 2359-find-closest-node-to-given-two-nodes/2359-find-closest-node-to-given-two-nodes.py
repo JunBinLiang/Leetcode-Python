@@ -16,14 +16,18 @@ class Solution:
         dfs(a, node2, 0, dic2)
         
         mn = 1000000000
-        res = -1
+        res = 1000000000
         for k in dic1:
             if k in dic2:
-                if max(dic1[k], dic2[k]) <= mn:
-                    if max(dic1[k], dic2[k]) < mn:
-                        mn = max(dic1[k], dic2[k])
-                        res = k
-                    else:
-                        res = min(res, k)
+                mn = min(mn, max(dic1[k], dic2[k]))
+                
+        if mn == 1000000000:
+            return -1
+        
+        for k in dic1:
+            if k in dic2:
+                if mn == max(dic1[k], dic2[k]):
+                    res = min(res, k)
+    
         return res
                 
