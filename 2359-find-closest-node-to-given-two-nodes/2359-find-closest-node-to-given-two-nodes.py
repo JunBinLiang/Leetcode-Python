@@ -28,6 +28,5 @@ class Solution:
             if k in dic2:
                 if mn == max(dic1[k], dic2[k]):
                     res = min(res, k)
-    
         return res
                 
