@@ -1,21 +1,15 @@
 class Solution:
     def subsets(self, a: List[int]) -> List[List[int]]:
-        self.res = []
-        self.dfs(a, 0, [])
-        return self.res
+        res = []
+        n = len(a)
+        
+        for state in range(0, 1 << n):
+            subset = []
+            for j in range(n):
+                if (state & (1 << j)) > 0:
+                    subset.append(a[j])
+            res.append(subset)
+        return res
     
-    def dfs(self, a, i, cur):
-        if i >= len(a):
-            self.res.append([x for x in cur])
-            return
-        
-        #take
-        cur.append(a[i])
-        self.dfs(a, i + 1, cur)
-        cur.pop()
-        
-        
-        #untake
-        #add nothing
-        self.dfs(a, i + 1, cur)
-        #remove nothing
+#0 1 2 3 4 5 6 7
+#        111
